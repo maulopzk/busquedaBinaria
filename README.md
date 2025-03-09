@@ -1,18 +1,36 @@
-## Getting Started
+## BUSCAR UN NUMERO DENTRO DE UN ARREGLO CON BUSQUEDA BINARIA
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Dado un arreglo con elementos unicos y ordenados, mediante
+la busqueda binaria se localiza si ún numero se encuentra dentro de ella
 
-## Folder Structure
+## ¿Qué se utilizó para este codigo?
 
-The workspace contains two folders by default, where:
+1. Se utiliza un arreglo normal, NO se hacen uso de listas
+2. Estructuras de control - Estructuras de control repetitivas
+3. Uso de scanner para la entrada de datos
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## ¿Como funciona el algoritmo? 
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+1. Este método usa posiciones para hacer la búsqueda.
+2. Busca por mitades
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+## ¿Posiciones para hacer la búsqueda?
 
-## Dependency Management
+Se puede hacer la búsqueda de un elemento de un arreglo mediante su indice.
+En este caso ese indice se obtiene de la siguiente forma:
+Dado un valor m = n / 2;
+Donde m = posición (indice), n = cantidad de elementos del arreglo
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## Obtener valor de m mediante iteraciones
+
+Se actualiza el valor de n siempre y cuando el arreglo evaluado en m sea
+diferente a el numero que se desea confirmar su existencia dentro del arreglo
+
+## Condiciones
+Dado que el valor de m se va reduciendo en cada iteración, se tienen que ir actualizando
+los valores del arreglo de acuerdo a lo siguiente:
+Se actualizan los valores del arreglo siempre y cuando el
+arreglo evaluado en m sea menor que el numero ingresado anteriormente:
+array[m] < numero_a_encontrar
+
+
