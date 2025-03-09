@@ -11,16 +11,21 @@ public class App {
 
         //primero descartamos los extremos del arreglo
         if (array[0] == numero || array[tamanioArreglo-1] == numero){
-            System.out.println("El numero se encuentra dentro del arreglo");
+            System.out.println("\nEl numero se encuentra dentro del arreglo");
         }
         else{
             int m = 0;
             int n = tamanioArreglo;
+            int contador = 0;
             while (true){
                 
                 m = n/2;
+
                 if (n % 2 == 1){ //se toma la decision de subir al proximo numero en residuo igual a 1
                     m++; 
+                }
+                if(m == 1){
+                    contador++;
                 }
                 System.out.printf("Valor de m = %d",m);
                 if (array[m] == numero) {
@@ -44,7 +49,13 @@ public class App {
                 }
                 System.out.println("Presione enter para continuar...");
                 String enter = cin.nextLine();
+
+                if(contador == 1){
+                    System.out.println("El numero no se ecuentra en el arreglo");
+                    break;
+                }
             }
+            cin.close();
         }
     }
 }
